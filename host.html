@@ -1,48 +1,49 @@
 <html>
-	<head>
-		<title>Dolby.io Real-time Streaming - Interactivity</title>
-		<script src="https://cdn.jsdelivr.net/npm/@millicast/sdk/dist/millicast.umd.min.js"></script>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity=""
-			crossorigin="anonymous"
-		/>
-		<script src="https://cdn.jsdelivr.net/npm/jsrender@1.0.13/jsrender.min.js"></script>
-		<script src="shared.js"></script>
-	</head>
-	<body>
-		<div class="bg-dark text-white px-4 py-4">
-			<h1>Dolby.io Real-time Streaming - Interactivity</h1>
-		</div>
-		<div class="px-4 mt-4">
-			<div class="mt-3">
-				<div class="shadow p-3 mb-5 bg-body rounded text-center">
-					<button onclick="participate(this)" style="height: 50px; width: 150px;">Participate</button>
-					<ul class="list-group">
-						<li id="viewerCount" class="list-group-item"></li>
-					</ul>
-					<ul id="participants" class="list-group">
-					</ul>
-				</div>
-			</div>
-		</div>
+  <head>
+    <title>Dolby.io Real-time Streaming - Webinar</title>
+    <script src="https://cdn.jsdelivr.net/npm/@millicast/sdk/dist/millicast.umd.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity=""
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jsrender@1.0.13/jsrender.min.js"></script>
+    <script src="shared.js"></script>
+  </head>
+  <body>
+    <div class="bg-dark text-white px-4 py-4">
+      <h1>Dolby.io Real-time Streaming - Webinar</h1>
+    </div>
+    <div class="px-4 mt-4">
+      <div class="mt-3">
+        <div class="shadow p-3 mb-5 bg-body rounded text-center">
+          <button onclick="participate(this)" style="height: 50px; width: 150px">
+            Participate
+          </button>
+          <ul class="list-group">
+            <li id="viewerCount" class="list-group-item"></li>
+          </ul>
+          <ul id="participants" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
 
-		<script>
-            const urlParams = new URLSearchParams(window.location.search);
+    <script>
+	  const urlParams = new URLSearchParams(window.location.search);
 
-			// Your stream Credentials
-			const streamAccountId = urlParams.get('aid') ?? "";
-			const streamName = urlParams.get('sn') ?? "";
-			const publishToken = urlParams.get('pt') ?? "";
-			const participantName = urlParams.get('n') ?? "";
+	  // Your Dolby.io stream credentials
+      const streamAccountId = "ACCOUNT_ID";
+      const streamName = "STREAM_NAME";
+      const publishToken = "PUBLISH_TOKEN";
+	  const participantName = urlParams.get('name') ?? "";
 
-			async function participate(button) {
-				button.remove();
+      async function participate(button) {
+        button.remove();
 
-				await startPublishing(publishToken, streamName, participantName);
-				await startListening(streamAccountId, streamName, participantName);
-			}
-		</script>
-	</body>
+        await startPublishing(publishToken, streamName, participantName);
+        await startListening(streamAccountId, streamName, participantName);
+      }
+    </script>
+  </body>
 </html>
