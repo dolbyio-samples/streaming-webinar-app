@@ -2,7 +2,7 @@
 
 This app is a basic example of how to build a multi-presenter experience with client-side mixing using [Dolby.io Streaming (Millicast)](https://dolby.io/products/real-time-streaming/).
 
-Originally created for this blog:
+Created for this blog: https://dolby.io/blog/migrating-from-twillio-video-to-dolby-millicast/
 
 # To get started
 
