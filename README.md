@@ -12,3 +12,5 @@ Originally created for this blog:
 
 
 If you have any questions or are interested in building out a webinar application feel free to [connect with us](https://dolby.io/contact/) to chat more.
+
+Code credit to Fabien: https://github.com/FabienLavocat
